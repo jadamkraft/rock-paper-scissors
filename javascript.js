@@ -9,7 +9,8 @@ function computerPlay() {
 }
 
 function playGame(playerSelection, computerSelection) {
-
+    playerSelection = window.prompt("Select Your Weapon: ");
+    computerSelection = computerPlay();
     let playerCorrected = playerSelection.toLowerCase();
     if (playerCorrected === "rock" && computerSelection === "scissors") {
         return "Congratulations. The computer says to say you're a chump."
@@ -31,3 +32,4 @@ function playGame(playerSelection, computerSelection) {
         return "We both have a piece of paper. Were you expecting to fight or something? Were you going to draw a picture of a weapon?"
     }
 }
+
