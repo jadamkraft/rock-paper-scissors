@@ -1,0 +1,36 @@
+/* styles.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+    border: .4em solid black;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    flex: 1
+    justify-content: center;
+    align-items: center;
+    border: .4em solid black;
+}
+
+.button {
+    border: .4em solid black;
+    margin: 16px;
+    padding: 4px 16px;
+}
+
+.results {
+    border: .4em solid black;
+    display: flex;
+    margin: 16px;
+    padding: 4px 16px;
+}
+
+.userClick {
+
+}
