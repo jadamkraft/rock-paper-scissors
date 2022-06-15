@@ -2,10 +2,16 @@
 // Generate a random number between 0-2
 // Use array index to select 1 of the strings and return it
 
+let playerValue = 0;
+let computerValue = 0;
+
 // Name user buttons to add event listeners
 const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
+
+const playerScore = document.querySelector('.player-score');
+const computerScore = document.querySelector('.computer-score');
 
 function computerPlay() {
     let weapons = ["rock", "paper", "scissors"];
@@ -18,44 +24,38 @@ function playRound(playerCorrected, computerSelection) {
     computerSelection = computerPlay();
     this.classList.add('userClick');
     if (playerCorrected === "rock" && computerSelection === "scissors") {
-        console.log("Congratulations. The computer says to say you're a chump.");
+        playerValue += 1;
+        computerValue -= 1;
     } else if (playerCorrected === "rock" && computerSelection === "paper") {
-        console.log("Heh heh heh. The computer wraps its crinkley paper crunch around your weak, stoney frame...");
+        playerValue -= 1;
+        computerValue += 1;
     } else if (playerCorrected === "rock" && computerSelection === "rock") {
-        console.log('The computer says "I picked rock!!! STOP COPYING ME!!!"');
+        playerValue += 0;
+        computerValue -= 0;
     } else if (playerCorrected === "scissors" && computerSelection === "paper") {
-        console.log("You won. That's pretty neat. Maybe you should think about the ways a computer could hurt you. If it got mad...");
+        playerValue += 1;
+        computerValue -= 1;
     } else if (playerCorrected === "scissors" && computerSelection === "rock") {
-        return "I bring my rock smashing down on top of your scissors. Oops, is your hand bleeding? Maybe don't bring scissors to a rock fight next time?"
+        playerValue -= 1;
+        computerValue += 1;
     } else if (playerCorrected === "scissors" && computerSelection === "scissors") {
-        return "We both picked scissors. If I were human, I would have quickly cut off your hands with my scissors and won the game."
+        playerValue += 0;
+        computerValue -= 0;
     } else if (playerCorrected === "paper" && computerSelection === "rock") {
-        return "Your paper wrapped around my rock, so you won. Enjoy your paper covered rocks. I'm a computer so I'm going to play a video game donkey."
+        playerValue += 1;
+        computerValue -= 1;
     } else if (playerCorrected === "paper" && computerSelection === "scissors") {
-        return "You'll never know the sweet pleasure my scissors felt slicing through your puny paper. I cut it into a million tiny pieces...";
+        playerValue -= 1;
+        computerValue += 1;
     } else if (playerCorrected === "paper" && computerSelection === "paper") {
-        return "We both have a piece of paper. Were you expecting to fight or something? Were you going to draw a picture of a weapon?"
-    } else {
-        return "This game is called Rock, Paper, Scissors. Maybe you should find someone smart enough to type in one of those 3 words."
+        playerValue += 0;
+        computerValue -= 0;
     }
+    playerScore.textContent = `${playerValue}`;
+    computerScore.textContent = `${computerValue}`;
+    return (playerValue, computerValue);
 }
 
-function testRock () {
-    let testString = this.dataset.button;
-    if (testString === "rock") {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
-}
-/* 
-function testPaper () {
-    console.log("Hello Paper");
-}
-
-function testScissors () {
-    console.log("Hello Scissors");
-} */
 // Add event listeners to user buttons
 rockButton.addEventListener('click', playRound);
 paperButton.addEventListener('click', playRound);

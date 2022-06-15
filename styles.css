@@ -31,6 +31,20 @@ body {
     padding: 4px 16px;
 }
 
-.userClick {
+.player-score {
+    border: .4em solid black;
+    display: flex;
+    margin: 16px;
+    padding: 4px 16px;
+}
 
+.computer-score {
+    border: .4em solid black;
+    display: flex;
+    margin: 16px;
+    padding: 4px 16px;
+}
+
+.userClick {
+    border: .4em solid blue;
 }
