@@ -23,33 +23,35 @@ function playRound(playerCorrected, computerSelection) {
     playerCorrected = this.dataset.button;
     computerSelection = computerPlay();
     this.classList.add('userClick');
-    if (playerCorrected === "rock" && computerSelection === "scissors") {
-        playerValue += 1;
-        computerValue -= 1;
-    } else if (playerCorrected === "rock" && computerSelection === "paper") {
-        playerValue -= 1;
-        computerValue += 1;
-    } else if (playerCorrected === "rock" && computerSelection === "rock") {
-        playerValue += 0;
-        computerValue -= 0;
-    } else if (playerCorrected === "scissors" && computerSelection === "paper") {
-        playerValue += 1;
-        computerValue -= 1;
-    } else if (playerCorrected === "scissors" && computerSelection === "rock") {
-        playerValue -= 1;
-        computerValue += 1;
-    } else if (playerCorrected === "scissors" && computerSelection === "scissors") {
-        playerValue += 0;
-        computerValue -= 0;
-    } else if (playerCorrected === "paper" && computerSelection === "rock") {
-        playerValue += 1;
-        computerValue -= 1;
-    } else if (playerCorrected === "paper" && computerSelection === "scissors") {
-        playerValue -= 1;
-        computerValue += 1;
-    } else if (playerCorrected === "paper" && computerSelection === "paper") {
-        playerValue += 0;
-        computerValue -= 0;
+    for (let i = 0; i < 5; i++) {
+        if (playerCorrected === "rock" && computerSelection === "scissors") {
+            playerValue += 1;
+            computerValue -= 1;
+        } else if (playerCorrected === "rock" && computerSelection === "paper") {
+            playerValue -= 1;
+            computerValue += 1;
+        } else if (playerCorrected === "rock" && computerSelection === "rock") {
+            playerValue += 0;
+            computerValue -= 0;
+        } else if (playerCorrected === "scissors" && computerSelection === "paper") {
+            playerValue += 1;
+            computerValue -= 1;
+        } else if (playerCorrected === "scissors" && computerSelection === "rock") {
+            playerValue -= 1;
+            computerValue += 1;
+        } else if (playerCorrected === "scissors" && computerSelection === "scissors") {
+            playerValue += 0;
+            computerValue -= 0;
+        } else if (playerCorrected === "paper" && computerSelection === "rock") {
+            playerValue += 1;
+            computerValue -= 1;
+        } else if (playerCorrected === "paper" && computerSelection === "scissors") {
+            playerValue -= 1;
+            computerValue += 1;
+        } else if (playerCorrected === "paper" && computerSelection === "paper") {
+            playerValue += 0;
+            computerValue -= 0;
+        }
     }
     playerScore.textContent = `${playerValue}`;
     computerScore.textContent = `${computerValue}`;
